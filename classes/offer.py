@@ -9,6 +9,12 @@ class Offer:
         self.direct_link = link
 
     def presentOffer(self) -> None:
-        print(self.title, self.salary, self.company)
-        print(self.requirements)
-        print(self.seniority)
+        print('#################### ' + str(self.ID) + ' ####################')
+        print(self.title)
+        print('Seniority: ' + self.seniority)
+        print('Salary: ' + self.salary)
+        print('Company: ' + self.company)
+        print('Requirements:')
+        for requirement in self.requirements:
+            print('- ' + requirement)
+        print('')

@@ -1,6 +1,5 @@
 from requests import get
 from bs4 import BeautifulSoup
-from sympy import re
 from classes.offer import Offer
 
 def getOffersInfo(URL) -> list:
