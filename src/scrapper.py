@@ -1,10 +1,10 @@
 from requests import get
 from bs4 import BeautifulSoup
-from offer import Offer
+from classes.offer import Offer
 
-URL = 'https://nofluffjobs.com/pl/lodz?page=1'
-
-def getOffersInfo(page_parsed) -> list:
+def getOffersInfo(URL) -> list:
+    page = get(URL)
+    page_parsed = BeautifulSoup(page.content, 'html.parser')
     offers = page_parsed.find_all('a', class_ = 'posting-list-item')
     result = []
     for offer in offers:
@@ -17,6 +17,7 @@ def getOffersInfo(page_parsed) -> list:
         result.append(Offer(title, salary, company, None))
     return result
 
+
 def parseTitle(title) -> str:
     return title.strip()
 
@@ -25,13 +26,3 @@ def parseSalary(salary) -> str:
 
 def parseCompany(company) -> str:
     return company.strip()
-
-def main() -> None:
-    page = get(URL)
-    page_parsed = BeautifulSoup(page.content, 'html.parser')
-
-    #DICTIONARY WITH TITLES AND SALARIES
-    offers = getOffersInfo(page_parsed)
-
-if __name__ ==  '__main__':
-    main()
