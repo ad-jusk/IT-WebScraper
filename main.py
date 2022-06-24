@@ -14,12 +14,13 @@ def main() -> None:
     seniority = askForSeniority()
     city = askForCity()
 
+    global current_page
     action = 0
     while True:
-        print('Searching for offers...')
+        print('Searching for offers...\n')
         offers = getOffersInfo(setURL(city), seniority)
         if len(offers) == 0:
-            print("Sorry, didn't find any matching offers.")
+            print("Sorry, didn't find any matching offers.\n")
         else:
             for offer in offers:
                 offer.presentOffer()
@@ -30,6 +31,7 @@ def main() -> None:
                     if action >= 1 and action <= len(offers):
                         offers[action - 1].printLink()
                     elif action == 0:
+                        print()
                         break
                     else:
                         print('Please enter a correct offer number or 0.')
@@ -44,10 +46,12 @@ def main() -> None:
             try:
                 action = int(input('Your choice: '))
                 if action == 1:
+                    print()
                     break
                 elif action == 2:
                     seniority = askForSeniority()
                     city = askForCity()
+                    current_page = 0
                     break;
                 elif action == 3:
                     return

@@ -24,4 +24,4 @@ class Offer:
         print('')
     
     def printLink(self) -> None:
-        print(Fore.YELLOW  + 'Here is your direct link: --> ' + self.link)
+        print(Fore.YELLOW  + 'Here is your direct link --> ' + self.link)
