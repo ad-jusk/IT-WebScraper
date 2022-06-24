@@ -1,4 +1,3 @@
-
 SENIORITY_LEVELS = ['trainee', 'junior', 'mid', 'senior', 'expert']
 CITIES = {
     'warsaw': 'warszawa',
@@ -18,11 +17,11 @@ def askForSeniority() -> str:
         try:
             level = int(input('Please rate your seniority level from 1 to 5: '))
             if level < 1 or level > 5:
-                print('Please write a correct integer.')
+                print('Please enter a correct integer.')
             else:
                 return SENIORITY_LEVELS[level - 1]
         except ValueError:
-            print('Please write a correct integer.')
+            print('Please enter a correct integer.')
 
 def askForCity() -> str:
     city = ''

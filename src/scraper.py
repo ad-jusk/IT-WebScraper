@@ -1,9 +1,13 @@
 from requests import get
+from requests.exceptions import RequestException
 from bs4 import BeautifulSoup
 from classes.offer import Offer
 
 def getOffersInfo(URL, seniority_level) -> list:
-    page = get(URL)
+    try:
+        page = get(URL)
+    except RequestException:
+        return []
     page_parsed = BeautifulSoup(page.content, 'html.parser')
     offers = page_parsed.find_all('a', class_ = 'posting-list-item')
     result = []

@@ -6,7 +6,7 @@ class Offer:
         self.company = company
         self.seniority = seniority
         self.requirements = requirements
-        self.direct_link = link
+        self.link = link
 
     def presentOffer(self) -> None:
         print('#################### ' + str(self.ID) + ' ####################')
@@ -18,3 +18,6 @@ class Offer:
         for requirement in self.requirements:
             print('- ' + requirement)
         print('')
+    
+    def getLink(self) -> str:
+        return self.link
