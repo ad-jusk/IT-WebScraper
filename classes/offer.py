@@ -1,3 +1,7 @@
+from colorama import Fore, init
+
+init(autoreset=True)
+
 class Offer:
     def __init__(self, ID, title, salary, company, seniority, requirements, link) -> None:
         self.ID = ID
@@ -9,15 +13,15 @@ class Offer:
         self.link = link
 
     def presentOffer(self) -> None:
-        print('#################### ' + str(self.ID) + ' ####################')
-        print(self.title)
-        print('Seniority: ' + self.seniority)
-        print('Salary: ' + self.salary)
-        print('Company: ' + self.company)
-        print('Requirements:')
+        print(Fore.YELLOW + '#################### ' + str(self.ID) + ' ####################')
+        print(Fore.WHITE + self.title)
+        print(Fore.GREEN + 'Seniority: ' + self.seniority)
+        print(Fore.CYAN + 'Salary: ' + self.salary)
+        print(Fore.MAGENTA + 'Company: ' + self.company)
+        print(Fore.RED + 'Requirements:')
         for requirement in self.requirements:
-            print('- ' + requirement)
+            print(Fore.RED + '- ' + requirement)
         print('')
     
-    def getLink(self) -> str:
-        return self.link
+    def printLink(self) -> None:
+        print(Fore.YELLOW  + 'Here is your direct link: --> ' + self.link)

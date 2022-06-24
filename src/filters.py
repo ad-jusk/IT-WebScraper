@@ -8,7 +8,7 @@ CITIES = {
 }
 
 def welcomeUser() -> None:
-    print('Hello, this program will quickly find job offers that might interest you.')
+    print('Hello, this program will quickly find IT job offers that might interest you.')
     print("Let's get started!")
 
 def askForSeniority() -> str:

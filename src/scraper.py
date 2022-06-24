@@ -51,14 +51,15 @@ def findRequirements(subpage_parsed) -> list:
         result.append(str(requirement.text).strip())
     return result
 
-def prepareLink(link) -> str:
+def prepareLink(link: str) -> str:
     return 'https://nofluffjobs.com' + link
 
-def parseTitle(title) -> str:
+def parseTitle(title: str) -> str:
     return title.strip()
 
-def parseSalary(salary) -> str:
-    return salary.replace('PLN', '').strip()
+def parseSalary(salary: str) -> str:
+    temp = salary.split('-')
+    return temp[0].strip() + ' - ' + temp[1].replace('PLN', '').strip()
 
-def parseCompany(company) -> str:
+def parseCompany(company: str) -> str:
     return company.strip()
