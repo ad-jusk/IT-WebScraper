@@ -17,9 +17,9 @@ Installation command: ```pip install bs4```
 Project also uses built-in module colorama.
 
 ## Running the program
-- clone the repository using the following command:  
+- open your terminal and clone the repository using the following command:  
 ```git clone https://github.com/ad-jusk/IT-WebScraper```  
-- open your terminal and navigate to the cloned repository's directory
+- navigate to the cloned repository's directory
 - enter this command:  
 ```python main.py```
 
