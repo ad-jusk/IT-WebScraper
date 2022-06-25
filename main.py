@@ -56,9 +56,9 @@ def main() -> None:
                 elif action == 3:
                     return
                 else:
-                    print('Please enter a correct offer number or 0.')
+                    print('Please enter a correct integer.')
             except ValueError:
-                print('Please enter a correct offer number or 0.')
+                print('Please enter a correct integer.')
         
 if __name__ ==  '__main__':
     main()
