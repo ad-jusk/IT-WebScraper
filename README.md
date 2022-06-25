@@ -12,9 +12,17 @@ Collected data includes:
 - requests  
 Installation command: ```pip install requests```
 - Beautiful Soup  
-Installation command: ```pip install beautifulsoup4```  
+Installation command: ```pip install bs4```  
   
 Project also uses built-in module colorama.
+
+## Running the program
+- clone the repository using the following command:  
+```git clone https://github.com/ad-jusk/IT-WebScraper```  
+- open your terminal and navigate to the cloned repository's directory
+- enter this command:  
+```python main.py```
+
 
 ## Demonstration
 First, the program will ask you for your seniority level.  
@@ -44,7 +52,7 @@ If you like a certain offer, you can choose to generate a direct link to it by e
 
 ![](/img/gettingLink.png)
 
-After analising the first set of offers, you can choose to search for more offers (which is equivalent to looking through another http site),
+After analysing the first set of offers, you can choose to search for more offers (which is equivalent to looking through another http site),
 change filters or quit the programm.
 
 ![](/img/options.png)
