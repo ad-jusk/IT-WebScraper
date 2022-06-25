@@ -3,6 +3,8 @@ from requests.exceptions import RequestException
 from bs4 import BeautifulSoup
 from classes.offer import Offer
 
+LINK_CONST = 'https://nofluffjobs.com'
+
 def getOffersInfo(URL, seniority_level) -> list:
     try:
         page = get(URL)
@@ -52,14 +54,16 @@ def findRequirements(subpage_parsed) -> list:
     return result
 
 def prepareLink(link: str) -> str:
-    return 'https://nofluffjobs.com' + link
+    return LINK_CONST + link
 
 def parseTitle(title: str) -> str:
     return title.strip()
 
 def parseSalary(salary: str) -> str:
     temp = salary.split('-')
-    return temp[0].strip() + ' - ' + temp[1].replace('PLN', '').strip()
+    if len(temp) == 2:
+        return temp[0].strip() + ' - ' + temp[1].replace('PLN', '').strip()
+    return temp[0].replace('PLN', '').strip()
 
 def parseCompany(company: str) -> str:
     return company.strip()
