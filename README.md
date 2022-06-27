@@ -13,8 +13,8 @@ Collected data includes:
 Installation command: ```pip install requests```
 - Beautiful Soup  
 Installation command: ```pip install bs4```  
-  
-Project also uses built-in module colorama.
+- colorama  
+Installation command: ```pip install colorama```
 
 ## Running the program
 - open your terminal and clone the repository using the following command:  
