@@ -53,7 +53,7 @@ If you like a certain offer, you can choose to generate a direct link to it by e
 ![](/img/gettingLink.png)
 
 After analysing the first set of offers, you can choose to search for more offers (which is equivalent to looking through another http site),
-change filters or quit the programm.
+change filters or quit the program.
 
 ![](/img/options.png)
 
