@@ -17,10 +17,10 @@ class Offer:
         print(Fore.WHITE + self.title)
         print(Fore.GREEN + 'Seniority: ' + self.seniority)
         print(Fore.CYAN + 'Salary: ' + self.salary)
-        print(Fore.MAGENTA + 'Company: ' + self.company)
-        print(Fore.RED + 'Requirements:')
+        print(Fore.LIGHTMAGENTA_EX + 'Company: ' + self.company)
+        print(Fore.LIGHTRED_EX + 'Requirements:')
         for requirement in self.requirements:
-            print(Fore.RED + '- ' + requirement)
+            print(Fore.LIGHTRED_EX + '- ' + requirement)
         print('')
     
     def printLink(self) -> None:

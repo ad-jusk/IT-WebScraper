@@ -38,18 +38,25 @@ def getOffersInfo(URL, seniority_level) -> list:
         id += 1
     return result
 
-def findSeniorityLevel(subpage_parsed) -> str:
-    seniority_block = subpage_parsed.find('common-posting-seniority')
+def findSeniorityLevel(subpage_parsed : BeautifulSoup) -> str:
+    seniority_block = subpage_parsed.find('li', {'id': 'posting-seniority'})
     return str(seniority_block.find('span', class_ = 'mr-10 font-weight-medium').text).strip()
 
-def findRequirements(subpage_parsed) -> list:
+def findRequirements(subpage_parsed : BeautifulSoup) -> list:
     result = []
-    req_block = subpage_parsed.find('common-posting-requirements',class_ = 'd-block')
+    req_block = subpage_parsed.find('div', {'id': 'posting-requirements'})
+
+    #sometimes requirements are stored in different tags
+    #so far i've seen buttons, links and spans
     requirements_button = req_block.find_all('button')
     requirements_a = req_block.find_all('a')
+    requirements_span = req_block.find_all('span')
+    
     for requirement in requirements_a:
         result.append(str(requirement.text).strip())
     for requirement in requirements_button:
+        result.append(str(requirement.text).strip())
+    for requirement in requirements_span:
         result.append(str(requirement.text).strip())
     return result
 

@@ -29,7 +29,7 @@ def askForCity() -> str:
         city = str(input('Please enter your city: '))
         if city.lower() in CITIES:
             print()
-            return CITIES[city]
+            return CITIES[city.lower()]
         else:
             print('Sorry, this city is not supported.')
 
