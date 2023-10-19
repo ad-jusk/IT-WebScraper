@@ -12,7 +12,7 @@ class Offer:
         self.requirements = requirements
         self.link = link
 
-    def presentOffer(self) -> None:
+    def present_offer(self) -> None:
         print(Fore.YELLOW + '#################### ' + str(self.ID) + ' ####################')
         print(Fore.WHITE + self.title)
         print(Fore.GREEN + 'Seniority: ' + self.seniority)
@@ -23,5 +23,5 @@ class Offer:
             print(Fore.LIGHTRED_EX + '- ' + requirement)
         print('')
     
-    def printLink(self) -> None:
+    def print_link(self) -> None:
         print(Fore.YELLOW  + 'Here is your direct link --> ' + self.link)

@@ -7,11 +7,11 @@ CITIES = {
     'wroclaw': 'wroclaw'
 }
 
-def welcomeUser() -> None:
+def welcome_user() -> None:
     print('Hello, this program will quickly find IT job offers that might interest you.')
     print("Let's get started!")
 
-def askForSeniority() -> str:
+def ask_for_seniority() -> str:
     level = None
     while True:
         try:
@@ -23,7 +23,7 @@ def askForSeniority() -> str:
         except ValueError:
             print('Please enter a correct integer.')
 
-def askForCity() -> str:
+def ask_for_city() -> str:
     city = ''
     while True:
         city = str(input('Please enter your city: '))
